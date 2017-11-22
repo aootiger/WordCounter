@@ -10,6 +10,9 @@ namespace WordCounter
     {
         static void Main(string[] args)
         {
+            CounterEngine.Instance.LoadInputStatementFromArgs(args);
+            CounterEngine.Instance.ProcessStatement();
+            CounterEngine.Instance.OutputResultToConsole();
         }
     }
 }
