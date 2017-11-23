@@ -59,6 +59,8 @@ namespace WordCounter
                 // clean up the dictionary
                 WordCountDictionary.Clear();
 
+                // remove all panctuation from the input text
+                this.InputStatement = Regex.Replace(this.InputStatement, @"[^\w\s]", "");
                 string[] words = this.InputStatement.Split(' ');
                 foreach (var item in words)
                 {
@@ -98,7 +100,7 @@ namespace WordCounter
         }
 
         /// <summary>
-        /// check if a str is a word
+        /// check if a string is a word
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
